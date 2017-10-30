@@ -1,5 +1,5 @@
 <?php
-namespace app\components;
+namespace app\components\patterns;
 
 class Factory {
     public function runFactory ()

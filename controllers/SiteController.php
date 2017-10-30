@@ -9,7 +9,8 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
-use app\components\Factory;
+use app\components\patterns\strategy\MallarDuck;
+
 
 class SiteController extends Controller
 {
@@ -128,9 +129,12 @@ class SiteController extends Controller
 
     public function actionTest()
     {
-        $fact = new Factory();
+        //$fact = new Factory();
         //$str = Yii::$app->factory->runFactory();
-        $str = $fact->runFactory();
+        //$str = $fact->runFactory();
+        $duck = new MallarDuck();
+        //$duck->performFly(new FlyWithWings());
+        $str = $duck->performFly();
         return $this->render('test.twig', ['username' => $str]);
     }
 }
