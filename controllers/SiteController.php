@@ -2,6 +2,9 @@
 
 namespace app\controllers;
 
+
+use app\components\patterns\decorator\Mocha;
+use app\components\patterns\decorator\Soy;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -10,6 +13,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\components\patterns\strategy\MallarDuck;
+use app\components\patterns\decorator\Espresso;
 
 
 class SiteController extends Controller
@@ -129,13 +133,19 @@ class SiteController extends Controller
 
     public function actionTest()
     {
-        //$fact = new Factory();
-        //$str = Yii::$app->factory->runFactory();
-        //$str = $fact->runFactory();
-        $duck = new MallarDuck();
-        //$duck->performFly(new FlyWithWings());
-        $str = $duck->performFly();
-        return $this->render('test.twig', ['username' => $str]);
+        //$duck = new MallarDuck();
+        //$str = $duck->performFly();
+        //$str = $duck->performQuack();
+        $bev = new Espresso();
+        $mocha = new Mocha($bev);
+        $soy = new Soy($mocha);
+        $soy = new Soy($soy);
+        $cost = $soy->cost();
+        $description = $soy->getDescription();
+        return $this->render('test.twig', [
+            'cost' => $cost,
+            'description' => $description,
+        ]);
     }
 }
 
