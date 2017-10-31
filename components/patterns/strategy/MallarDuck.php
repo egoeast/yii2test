@@ -48,6 +48,11 @@ abstract class Duck
 {
     private $flyBehavior;
     private $quackBehavior;
+    public function __construct(iFlyBehavior $behavior1, iQuackBehavior $behavior2)
+    {
+        $this->flyBehavior = $behavior1;
+        $this->quackBehavior = $behavior2;
+    }
     public function performFly()
     {
         return $this->flyBehavior->fly();
@@ -70,11 +75,7 @@ abstract class Duck
 
 class MallarDuck extends Duck
 {
-    public function __construct()
-    {
-        $this->setFlyBehavior(new FlyWithRocket());
-        $this->setQuackBehavior(new Quack());
-    }
+
 }
 
 

@@ -15,11 +15,11 @@ abstract class Beverage
 
 abstract class ComdimentDecorator extends Beverage
 {
-    private $beverage;
+    protected $beverage;
 
     public function __construct(Beverage $beverage)
     {
-        $this->bevarage = $beverage;
+        $this->beverage = $beverage;
     }
 }
 
@@ -40,12 +40,12 @@ class Mocha extends ComdimentDecorator
 {
     public function cost()
     {
-        return 0.34 + $this->bevarage->cost();
+        return 0.34 + $this->beverage->cost();
     }
 
     public function getDescription()
     {
-        return $this->bevarage->getDescription() . ", Mocha";
+        return $this->beverage->getDescription() . ", Mocha";
     }
 }
 
@@ -53,12 +53,12 @@ class Soy extends ComdimentDecorator
 {
     public function cost()
     {
-        return 0.22 + $this->bevarage->cost();
+        return 0.22 + $this->beverage->cost();
     }
 
     public function getDescription()
     {
-        return $this->bevarage->getDescription() . ", Soy";
+        return $this->beverage->getDescription() . ", Soy";
     }
 
 }
