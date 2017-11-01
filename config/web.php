@@ -45,15 +45,13 @@ $config = [
                 ],
             ],
         ],
-        'db' => $db,
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            'rules' => [
-            ],
+        'db' => [
+            'class' => 'yii\db\Connection',
+            'dsn' => 'mysql:host=localhost;dbname=yii2test',
+            'username' => 'user',
+            'password' => '123456',
+            'charset' => 'utf8',
         ],
-        */
         'view' => [
             'class' => 'yii\web\View',
             'renderers' => [
@@ -79,7 +77,9 @@ $config = [
             // Use pretty URLs
             'enablePrettyUrl' => true,
             'rules' => [
-                '<alias:\w+>' => 'site/<alias>',
+                '/' => 'site/index',
+                'test' => 'site/test',
+                'ws' => 'weather-station/index',
             ],
         ],
     ],

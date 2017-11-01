@@ -21,3 +21,26 @@ interface iDisplay
 {
     public function display();
 }
+
+class WeatherData implements iSubject
+{
+    private $observers = array();
+    private $temperature;
+    private $humidity;
+    private $pressure;
+    public function registerObserver(iObserver $observer)
+    {
+        array_push($this->observers, $observer);
+    }
+
+    public function removeObserver(iObserver $observer)
+    {
+        return array_search($this->observers, $observer);
+    }
+
+    public function notifyObserver(iObserver $observer)
+    {
+        // TODO: Implement notifyObserver() method.
+    }
+}
+
