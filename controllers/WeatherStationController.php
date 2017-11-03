@@ -2,12 +2,22 @@
 
 namespace app\controllers;
 
-class WeatherStationController extends \yii\web\Controller
+use Yii;
+use app\models\WeatherStation;
+use yii\console\Controller;
+
+class WeatherStationController extends Controller
 {
     public function actionIndex()
     {
-        //sdasdas
-        return $this->render('index');
+        $model = new WeatherStation();
+
+        if($model->load(Yii::$app->request->post()) && $model->validate())
+        {
+            $model->save();
+        }
+
+        return $this->render('index', ['model' => $model]);
     }
 
 }

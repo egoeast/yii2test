@@ -11,9 +11,9 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-        <?= $form->field($model, 'tmp') ?>
-        <?= $form->field($model, 'hum') ?>
-        <?= $form->field($model, 'pres') ?>
+        <?= $form->field($model, 'temperature') ?>
+        <?= $form->field($model, 'humidity') ?>
+        <?= $form->field($model, 'pressure') ?>
     
         <div class="form-group">
             <?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'btn btn-primary']) ?>

@@ -3,16 +3,16 @@
 namespace app\models;
 
 use Yii;
-
+use yii\db\ActiveRecord;
 /**
  * This is the model class for table "weather_station".
  *
  * @property integer $id
- * @property double $tmp
- * @property double $hum
- * @property integer $pres
+ * @property double $temperature
+ * @property double $humidity
+ * @property integer $pressure
  */
-class WeatherStation extends \yii\db\ActiveRecord
+class WeatherStation extends ActiveRecord
 {
     /**
      * @inheritdoc
@@ -28,9 +28,9 @@ class WeatherStation extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['tmp', 'hum', 'pres'], 'required'],
-            [['tmp', 'hum'], 'number'],
-            [['pres'], 'integer'],
+            [['temperature', 'humidity', 'pressure'], 'required'],
+            [['temperature', 'humidity'], 'number'],
+            [['pressure'], 'integer'],
         ];
     }
 
@@ -40,10 +40,10 @@ class WeatherStation extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'tmp' => 'Tmp',
-            'hum' => 'Hum',
-            'pres' => 'Pres',
+            'id' => Yii::t('app', 'ID'),
+            'temperature' => Yii::t('app', 'Temperature'),
+            'humidity' => Yii::t('app', 'Humidity'),
+            'pressure' => Yii::t('app', 'Pressure'),
         ];
     }
 }

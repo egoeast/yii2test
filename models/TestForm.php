@@ -12,7 +12,8 @@ class TestForm extends Model
     public function rules()
     {
         return [
-            [['user', 'email'], 'required']
+            [['user', 'email'], 'required'],
+            ['email', 'email'],
         ];
     }
 }
