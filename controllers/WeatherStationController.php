@@ -17,7 +17,7 @@ class WeatherStationController extends Controller
             $model->save();
         }
 
-        return $this->render('index', ['model' => $model]);
+        return $this->render('index.twig', ['model' => $model]);
     }
 
 }

@@ -45,13 +45,7 @@ $config = [
                 ],
             ],
         ],
-        'db' => [
-            'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=yii2test',
-            'username' => 'user',
-            'password' => '123456',
-            'charset' => 'utf8',
-        ],
+        'db' => $db,
         'view' => [
             'class' => 'yii\web\View',
             'renderers' => [
@@ -66,8 +60,12 @@ $config = [
                         'html' => ['class' => '\yii\helpers\Html'],
                     ],
                     'uses' => ['yii\bootstrap'],
+                    'extensions' => [
+                        \yii\twig\html\HtmlHelperExtension::class,
+                    ],
                 ],
                 // ...
+
             ],
         ],
         'urlManager' => [
