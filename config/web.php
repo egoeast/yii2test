@@ -61,8 +61,9 @@ $config = [
                     ],
                     'uses' => ['yii\bootstrap'],
                     'extensions' => [
-                        \yii\twig\html\HtmlHelperExtension::class,
+                        'Twig\Extensions\I18nExtension',
                     ],
+
                 ],
                 // ...
 
@@ -78,6 +79,19 @@ $config = [
                 '/' => 'site/index',
                 'test' => 'site/test',
                 'ws' => 'weather-station/index',
+            ],
+        ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'ru-RU',
+                    'fileMap' => [
+                        'app'       => 'app.php',
+
+                    ],
+                ],
             ],
         ],
     ],

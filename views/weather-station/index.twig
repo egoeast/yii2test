@@ -1,17 +1,27 @@
 {{ use('yii\helpers\Html') }}
 {{ use('yii\widgets\ActiveForm') }}
-{{ use('yii\twig\html\HtmlHelperExtension') }}
 
 <div class="weather-station-index">
 
-    {% set form = active_form_begin({})%}
+    {% trans 'Hello World!' %}
+    {% trans string_var %}
+
+    {% trans %}
+    Hello World!
+    {% endtrans %}
+    {% set form = active_form_begin({
+        'id' : 'weather',
+
+
+    })%}
         {{ form.field(model, 'temperature') | raw }}
         {{ form.field(model, 'humidity') | raw }}
         {{ form.field(model, 'pressure') | raw }}
 
         <div class="form-group">
+
             <!--<?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'btn btn-primary']) ?>-->
-            {{ Html.a('text', 'link', {'class':'btn btn-default'}) }}
+            {{ html.a('test', 'link', {'class':'btn btn-default'}) | raw }}
             <input type="submit" value="Сохранить" class="btn btn-primary" />
         </div>
     {{ active_form_end() }}
