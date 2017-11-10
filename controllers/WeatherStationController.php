@@ -12,14 +12,15 @@ class WeatherStationController extends Controller
 
     public function actionIndex()
     {
-        \Yii::$app->language = 'ru-RU';
+
+
         $model = new WeatherStation();
 
         if($model->load(Yii::$app->request->post()) && $model->validate())
         {
             $model->save();
         }
-
+        \Yii::$app->language = 'ru-RU';
 
         return $this->render('index.twig', ['model' => $model]);
     }

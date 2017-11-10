@@ -6,6 +6,6 @@
  * Time: 13:57
  */
 return [
-    'Hello World!' => 'Здравствуй мир!',
-    'original message 2' => 'translated message 2',
+    'hl' => 'Здравствуй мир!',
+    'Hello' => 'Привет',
 ];
