@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\WeatherStation;
 use yii\console\Controller;
+use app\components\patterns\Observer\WeatherData;
 
 class WeatherStationController extends Controller
 {
@@ -14,6 +15,7 @@ class WeatherStationController extends Controller
     {
 
 
+        $station = new WeatherData();
         $model = new WeatherStation();
 
         if($model->load(Yii::$app->request->post()) && $model->validate())

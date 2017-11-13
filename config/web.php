@@ -59,10 +59,14 @@ $config = [
                     ],
                     'globals' => [
                         'html' => ['class' => '\yii\helpers\Html'],
+                        //'lang' => ['class' => 'Yii'],
                     ],
+                    'functions' => array(
+                        'lang' => 'Yii::t',
+                    ),
                     'uses' => ['yii\bootstrap'],
                     'extensions' => [
-                        'Twig\Extensions\I18nExtension',
+                        //'Twig\Extensions\I18nExtension',
                     ],
 
                 ],
