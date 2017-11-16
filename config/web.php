@@ -84,6 +84,7 @@ $config = [
                 '/' => 'site/index',
                 'test' => 'site/test',
                 'ws' => 'weather-station/index',
+                'trans' => 'translation/index'
             ],
         ],
         'i18n' => [
