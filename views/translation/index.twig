@@ -1,0 +1,26 @@
+{{ use('yii\helpers\Html') }}
+{{ use('yii\widgets\ActiveForm') }}
+
+<div class="weather-station-index">
+
+    {{ lang('app', 'Hello') }}
+    {% set form = active_form_begin({
+    'id' : 'weather',
+
+
+    })%}
+    {{ form.field(model, 'temperature').label(lang('app', 'temp')) | raw }}
+    {{ form.field(model, 'humidity') | raw }}
+    {{ form.field(model, 'pressure') | raw }}
+
+    <div class="form-group">
+
+        <!--<?= Html::submitButton(Yii::t('app', 'Submit'), ['class' => 'btn btn-primary']) ?>-->
+        {{ html.a(lang('app', 'Hello'), 'link', {'class':'btn btn-default'}) | raw }}
+
+        <input type="submit" value="Сохранить" class="btn btn-primary" />
+    </div>
+    {{ active_form_end() }}
+</div><!-- weather-station-index -->
+
+{{ result }}
